@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aaron Crisologo // Full Stack Web Developer</title>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#4f46e5',
+              600: '#4338ca',
+              700: '#3730a3',
+            }
+          },
+          boxShadow: {
+            'glow-soft': '0 15px 35px -5px rgba(99, 102, 241, 0.22), 0 8px 16px -6px rgba(99, 102, 241, 0.15)',
+            'card': '0 2px 10px 0 rgba(0, 0, 0, 0.03), 0 1px 3px -1px rgba(0, 0, 0, 0.05)',
+            'card-hover': '0 12px 28px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-utilities">
+    body {
+      background-color: #f7f9fd;
+      color: #1e293b;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #2563eb 0%, #6366f1 50%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, #2563eb 0%, #6366f1 60%, #7c3aed 100%);
+      transition: all 0.25s ease;
+    }
+    .btn-gradient:hover {
+      box-shadow: 0 10px 24px -4px rgba(79, 70, 229, 0.45);
+      transform: translateY(-1px);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-indigo-100 selection:text-indigo-800">
+<!-- BEGIN: Navigation -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo / Profile -->
+<a aria-label="Aaron Crisologo — home" class="flex items-center gap-3 group" href="#home">
+<div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-indigo-500/20 group-hover:ring-indigo-500 transition-all shrink-0">
+<img alt="Portrait of Aaron Crisologo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGOo8Cwc_9MBAKFXTZ3cdK8qovjWTt2kQKnJmOWHCooRyF72qS66SoMrCJmR-uJejT596BmG-3HNYTmAPxiltVq4QtEJzD-o0BvmA1ZO3SN6EjEG2rMGSMWtwsixBTD-ez7vE82wYwBs-4gPrTbvfiONBNi_FbP2N2niRmscmj4PNgTTjnpUGz7NczzqeFrAU_A3IFl8WrpaHCxZWNh250KW4OuI2UhAyYV16KCg5L9ydwQlFxoXcx"/>
+</div>
+<span class="text-sm font-extrabold tracking-wider text-slate-800 uppercase">
+          Aaron Crisologo
+        </span>
+</a>
+<!-- Navigation Links -->
+<nav aria-label="Primary" class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+<a class="hover:text-indigo-600 transition-colors" href="#home">Home</a>
+<a class="hover:text-indigo-600 transition-colors" href="#projects">Projects</a>
+<a class="hover:text-indigo-600 transition-colors" href="#tools">Tools</a>
+<a class="hover:text-indigo-600 transition-colors" href="#contact">Contacts</a>
+</nav>
+<!-- Action Button -->
+<div class="flex items-center">
+<a class="btn-gradient text-white text-sm font-semibold px-6 py-2.5 rounded-full shadow-md hover:shadow-indigo-500/30 transition-all inline-block" href="#contact">
+          Hire Me
+        </a>
+</div>
+</div>
+</header>
+<!-- END: Navigation -->
+<!-- BEGIN: HeroSection -->
+<main class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden" id="home">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Left Column: Introduction & Statistics -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-6">
+<!-- Availability Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200/60 text-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Available for work
+          </div>
+<!-- Headline -->
+<h1 class="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.18] tracking-tight text-slate-900">
+            Designing the frontier of <span class="text-gradient">functional &amp; intuitive</span> web applications.
+          </h1>
+<!-- Role Label -->
+<p class="text-indigo-600 font-bold text-lg tracking-wide">
+            Full Stack Web Developer
+          </p>
+<!-- Biography Description -->
+<p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+            Hello, I am <strong class="text-slate-800 font-semibold">Aaron Crisologo</strong>. I build responsive, user-focused web apps with modern front-end and back-end technologies — from REST API documentation to full-stack booking systems and e-commerce platforms.
+          </p>
+<!-- Call To Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-sm hover:shadow transition-all inline-flex items-center justify-center text-sm" href="#projects">
+              View My Projects
+            </a>
+<a class="border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold px-6 py-3 rounded-lg shadow-sm transition-all inline-flex items-center justify-center text-sm" href="#contact">
+              Contact Me
+            </a>
+<a class="border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold px-6 py-3 rounded-lg shadow-sm transition-all inline-flex items-center justify-center gap-2 text-sm" download="" href="Aaron_Angelo_Crisologo_CV.pdf">
+<i aria-hidden="true" class="fa-solid fa-download"></i>
+              Download CV
+            </a>
+</div>
+<!-- Quick Metrics & Experience Stats -->
+<div class="pt-8 grid grid-cols-3 gap-6 sm:gap-10 border-t border-slate-200/70 w-full max-w-xl">
+<div>
+<div class="text-2xl sm:text-3xl font-extrabold text-slate-900">7+</div>
+<div class="text-xs sm:text-sm font-medium text-slate-500 mt-1">Projects Completed</div>
+</div>
+<div>
+<div class="text-2xl sm:text-3xl font-extrabold text-slate-900">5+</div>
+<div class="text-xs sm:text-sm font-medium text-slate-500 mt-1">Web Technologies</div>
+</div>
+<div>
+<div class="text-2xl sm:text-3xl font-extrabold text-slate-900">2+</div>
+<div class="text-xs sm:text-sm font-medium text-slate-500 mt-1">API Docs Published</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Profile Card -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-glow-soft border border-indigo-100/60 relative">
+<div class="flex flex-col items-center text-center">
+<!-- Avatar with Ring -->
+<div class="w-28 h-28 rounded-full overflow-hidden p-1 bg-white shadow-md ring-2 ring-slate-100 mb-5">
+<img alt="Portrait of Aaron Crisologo" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi4MIwd1PpD6rBZUwqXDPXFOOoIFl3DE3sEGRWayQ12MY5I1c2Yvd8i3Ncpi1fs2cyh0TuUaOcoUjWyRsR2-0WtCh9nAkrVfb3b33_PKUzh1rem-ZNBFa9V3zjjMa9oYgk6AHUzk4KY9QG6kAIbwVLjbuEus5hinCb-JEEy5EV-bT15fEAllh6M6Ay93xZcOwPStf5qzMmrPUDuWfFaeAO5WVOmP9h0i09q_DPwx3V7GxjQs54Chio"/>
+</div>
+<!-- Name & Title -->
+<h2 class="text-2xl font-bold text-slate-900">Aaron Crisologo</h2>
+<p class="text-slate-500 text-sm font-medium mt-1">Full Stack Web Developer</p>
+<!-- Tags / Badges -->
+<div class="flex flex-wrap items-center justify-center gap-2.5 mt-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+<span aria-hidden="true">📦</span> 7 Projects
+                </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+<span aria-hidden="true">⭐</span> Frontend + Backend
+                </span>
+</div>
+<!-- Work Together Button -->
+<div class="w-full mt-8">
+<a class="w-full btn-gradient text-white text-sm font-semibold py-3.5 px-4 rounded-xl shadow-md hover:shadow-indigo-500/25 transition-all block text-center" href="#contact">
+                  Let's Work Together
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- END: HeroSection -->
+<!-- BEGIN: FeaturedProjects -->
+<section class="py-20 bg-slate-50/60 border-t border-slate-200/50" id="projects">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-16">
+<span class="px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 font-bold text-xs tracking-wider uppercase mb-3">
+          Portfolio
+        </span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Featured Projects
+        </h2>
+<p class="text-slate-600 text-sm sm:text-base mt-3 max-w-xl">
+          A selection of my API documentation, applications, and UI mockups / prototypes.
+        </p>
+</div>
+<!-- Project Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1: E-commerce API Documentation -->
+<article class="bg-white rounded-2xl border border-slate-200/70 overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-sky-50 flex items-center justify-center p-4">
+<img alt="Preview of E-commerce API Documentation project" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4m3BREtkYtzj9e6Df4feciFvWs84a3bQcLdP5V0SIMdQYhM1tz7i7DBJ6icjkjE5-i_vQyN3Ob2DaHvMdDGO6-zLqrVeHsUC_C7CEE6Z16f1ftkhuhQOFhnH7A641IhHAFgTUP88HgKohIOiF8Q5Z_DSXjVOLDIiZK0Lit2N8KaoRaIjHUyvvV8iNBgM4ErEAfepX_0qKLy5O1SjJ36LqQR7VBzzlQgO-ehz7p8-sF7sjaP0CGABC"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-600 mb-3">
+                API Documentation
+              </span>
+<h3 class="text-xl font-bold text-slate-900 mb-3">
+                E-commerce API Documentation
+              </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                Dynamic E-Commerce Workflow Management. The system features dynamic routes for order processing, real-time inventory updates, and secure user authentication. It also supports seamless automated order reporting and comprehensive product management. Documented Backend API published publicly using Postman.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Express</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">MongoDB</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Postman</span>
+</div>
+</div>
+</article>
+<!-- Project 2: Course Booking API Documentation -->
+<article class="bg-white rounded-2xl border border-slate-200/70 overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-purple-50 flex items-center justify-center p-4">
+<img alt="Preview of Course Booking API Documentation project" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCruHPsMCFnzwYxaTyzt8Y-Qa8porom6a6126-eVMpE-ZDiv__2dvKvQV7_k62KAclUCvm3OrkI6if1fFWNn2VSG4tydO9-hY1gdPctz6meBGFBIeD4OwnD1rYK1ficBWm0PLWJepNOoenjSEkhA59uAzw-wfUgsaBKcYyfLoR_R7CMjXs-hgrwEDEtS5nhOfXWDuB5UilP-KyJO7-PaEmL8OWT3VY0PD_AtwHYv2rjlIGvlLpDISZ-"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-600 mb-3">
+                API Documentation
+              </span>
+<h3 class="text-xl font-bold text-slate-900 mb-3">
+                Course Booking API Documentation
+              </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                RESTful API for managing course enrollments, featuring user registration, authentication, and retrieval of user details. Supports course creation, updates, archiving, activation, and student enrollment. Publicly documented using Postman.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Node.js</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Express</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">JWT</span>
+</div>
+</div>
+</article>
+<!-- Project 3: Course Booking App -->
+<article class="bg-white rounded-2xl border border-slate-200/70 overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-emerald-50 flex items-center justify-center p-4">
+<img alt="Preview of Course Booking App project" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9A8GkTyYgAoYkYm5UfXqDP9bzwKhN1iiFAZGV6L3DeeitPQVbmf8Pc4E6EdI29S2sBJlnVFOObSP3QbHwzt4iUHTkhBF6UBIE6VkYUybhv_tVRPH8LGM4xQ6RwpLXKmGqyMH08inVS7Zy7QfHe8ljmAH5fPETsDfDQm-wdSvw3d7sn1xyucJWKLWzNt41oHnKhlPFHzgYXIJUzue-7ebF0zupDMCeOz_J8vkuA1epC4jwvQI5PS2I"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-600 mb-3">
+                Full Stack App
+              </span>
+<h3 class="text-xl font-bold text-slate-900 mb-3">
+                Course Booking App
+              </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                A MERN-stack course enrollment system featuring user registration, authentication, and profile management. Authenticated users can create, update, archive, and activate courses. The platform also allows users to browse available courses and enroll seamlessly.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">React</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Bootstrap 5</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">MongoDB</span>
+</div>
+</div>
+</article>
+<!-- Project 4: E-commerce App -->
+<article class="bg-white rounded-2xl border border-slate-200/70 overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-amber-50 flex items-center justify-center p-4">
+<img alt="Preview of E-commerce App project" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYeqUzwk2Jkfq_VqibqeMWv36urRI4VL3e4LpNsK1YRXbg_ZfWKqQVbsr_ZsNYbGAd0megAsp8c6zSk9eZOR-L16RG_rzgw4ZEqzSoCfA3SsC32d7d45WoNkynyWjc2clnccnXy3f4hV9cRo4TxSeR3lkmySmgGUjuI0VPFBFyzuAA8DlA17YN-uo0WuMJgcVyvPmK83UuIg6vzmz21Ix9b774uc4V_0uQx9Ql20SQwyNSsu1icA3o"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-600 mb-3">
+                Full Stack App
+              </span>
+<h3 class="text-xl font-bold text-slate-900 mb-3">
+                E-commerce App
+              </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                MERN E-Commerce Platform. The platform features dynamic product catalog with filtering and sorting, real-time search, seamless cart updates, secure checkout, and a comprehensive admin dashboard with real-time analytics and user management capabilities.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">JavaScript</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Bootstrap 5</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">API</span>
+</div>
+</div>
+</article>
+<!-- Project 5: Airline Booking System Mockup -->
+<article class="bg-white rounded-2xl border border-slate-200/70 overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-rose-50 flex items-center justify-center p-4">
+<img alt="Preview of Airline Booking System Mockup project" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFosPASxA2s7wK4XHXvI3qhJ0S52VBO9aKidK1pTCoY1CvsNbwsFuKiimlC3ZecROkRmFPp8cnylb0GcDFoc3KEVuextFyEQSnAxQBdtVTxf7IIJy0Xgjt09R3SwaKsOFzq0wBdI1hHyAec0j0kMrVtSv34gzyqMuPkLadA4MW1EH7U789A4qMAPgQgLsfU7ydwmL_oGCuBc9a5m5AFCuQqMLyjFxg__H2Vl1R85wjVgC0a58XguqO"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-orange-50 text-orange-600 mb-3">
+                UI Mockup
+              </span>
+<h3 class="text-xl font-bold text-slate-900 mb-3">
+                Airline Booking System Mockup
+              </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                Side Project: Conceptual design showcasing an intuitive UI for flight search, seat selection, and booking confirmation, focusing on user experience and workflow efficiency.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Figma</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">UI Design</span>
+</div>
+</div>
+</article>
+<!-- Project 6: Airline Booking System Prototype -->
+<article class="bg-white rounded-2xl border border-slate-200/70 overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-indigo-50 flex items-center justify-center p-4">
+<img alt="Preview of Airline Booking System Prototype project" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHzWgYqHImdxoCYT_8J9piMIOizySfjLTcaFu1MqKsrwjupaXOaxmeSx-BrBCaGK83V890qP_lXy65HMcXj1GfSpLSEoCjcmpLWEO00IGlXOlI3MVFnP9GJ417e7XcdBupfaNADNlpZjJVstYm4_-l7JmVnxgMap07leJrqc3kkSpbRGWHGI9hWqkDvsqGfx42n098PvzMyKT13V9EzOCOwJ_o4FVFZPL3UbS6jTUcpNzcxuqNbhoE"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-pink-50 text-pink-600 mb-3">
+                Prototype
+              </span>
+<h3 class="text-xl font-bold text-slate-900 mb-3">
+                Airline Booking System Prototype
+              </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                Side Project: Interactive prototype simulating end-to-end airline booking functionalities, including flight search, reservation, payment processing, and real-time ticket management.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Figma</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Prototyping</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Centered Capstone Project (Project 7) -->
+<div class="mt-8 flex justify-center">
+<article class="w-full md:max-w-md bg-white rounded-2xl border border-slate-200/70 overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-blue-50 flex items-center justify-center p-4">
+<img alt="Preview of Short Courses Capstone project" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ67EjezCRBVDF3Bz_Z58BRK8JLsrTIXM1CoT9UDKcCy4CBahFEo7sRNo6Rn9DlBviyfEbehK7W2cDUPI87q8VdCmo0he3ug8AtK2FJPBZsuwjQg9H50gEY16IVCNazkyRSEAxYRt6qiykmGBjRauq4sSv7ngDMyft00qAMRtpMQUrMBrVHDToOeq1lP4ShoRmx3SuyxJFLyoCnoBxj0_8dED77cMW4Rgs8gnVR3ptcM_q5XTiaVwT"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-600 mb-3">
+                Capstone
+              </span>
+<h3 class="text-xl font-bold text-slate-900 mb-3">
+                Short Courses Capstone
+              </h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                Placeholder for your Short courses capstone project. An end-to-end full learning management demonstration showcasing responsive components and interactive workflows.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">HTML</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">CSS</span>
+<span class="px-2.5 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded-md">Bootstrap 5</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: FeaturedProjects -->
+<!-- BEGIN: CoreTechnologies -->
+<section class="py-20 bg-white" id="tools">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-16">
+<span class="px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 font-bold text-xs tracking-wider uppercase mb-3">
+          My Stack
+        </span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Core Technologies &amp; <span class="text-indigo-600">Tools</span>
+</h2>
+<p class="text-slate-600 text-sm sm:text-base mt-3 max-w-xl">
+          Technologies I use to design, build and deploy full-stack applications.
+        </p>
+</div>
+<!-- Tools Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto">
+<!-- Tech 1: HTML5 -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-orange-500 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<i aria-hidden="true" class="fa-brands fa-html5"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">HTML5</span>
+</div>
+<!-- Tech 2: CSS3 -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-blue-500 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<i aria-hidden="true" class="fa-brands fa-css3-alt"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">CSS3</span>
+</div>
+<!-- Tech 3: Bootstrap -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-purple-600 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<i aria-hidden="true" class="fa-brands fa-bootstrap"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">Bootstrap</span>
+</div>
+<!-- Tech 4: JavaScript -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-amber-400 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<i aria-hidden="true" class="fa-brands fa-square-js"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">JavaScript</span>
+</div>
+<!-- Tech 5: React -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-sky-400 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<i aria-hidden="true" class="fa-brands fa-react"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">React</span>
+</div>
+<!-- Tech 6: Node.js -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-emerald-600 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<i aria-hidden="true" class="fa-brands fa-node"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">Node.js</span>
+</div>
+<!-- Tech 7: Postman -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-orange-600 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<!-- Stylized Postman Astronaut / Rocket Icon -->
+<i aria-hidden="true" class="fa-solid fa-paper-plane"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">Postman</span>
+</div>
+<!-- Tech 8: Git -->
+<div class="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center group">
+<div class="w-16 h-16 flex items-center justify-center text-red-500 mb-4 text-4xl group-hover:scale-110 transition-transform">
+<i aria-hidden="true" class="fa-brands fa-git-alt"></i>
+</div>
+<span class="text-slate-800 font-bold text-base">Git</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CoreTechnologies -->
+<!-- BEGIN: ContactSection -->
+<section class="py-20 bg-slate-50/70 border-t border-slate-200/60" id="contact">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-16">
+<span class="px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 font-bold text-xs tracking-wider uppercase mb-3">
+          Get In Touch
+        </span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Start a <span class="text-gradient">Conversation</span>
+</h2>
+<p class="text-slate-600 text-sm sm:text-base mt-3 max-w-xl">
+          Have a project in mind or want to collaborate? Send me a message.
+        </p>
+</div>
+<!-- Contact Layout (Form + Info Cards) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-start">
+<!-- Left Column: Form -->
+<div class="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/70 shadow-card">
+<h3 class="text-xs font-bold text-slate-800 tracking-wider uppercase mb-6">
+            Contact Me
+          </h3>
+<form class="space-y-5" id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="fullName">Full Name</label>
+<input class="w-full text-sm rounded-xl border-slate-200 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition" id="fullName" name="fullName" placeholder="Aaron Crisologo" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="email">Email Address</label>
+<input class="w-full text-sm rounded-xl border-slate-200 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition" id="email" name="email" placeholder="email@example.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="subject">Subject</label>
+<input class="w-full text-sm rounded-xl border-slate-200 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition" id="subject" name="subject" placeholder="Project inquiry" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="message">Project Details / Message</label>
+<textarea class="w-full text-sm rounded-xl border-slate-200 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition resize-y" id="message" name="message" placeholder="Tell me about your project..." required="" rows="5"></textarea>
+</div>
+<button class="w-full btn-gradient text-white text-sm font-semibold py-3.5 px-6 rounded-xl shadow-md transition-all block text-center" type="submit">
+              Send Message
+            </button>
+</form>
+</div>
+<!-- Right Column: Details & QR Sync Card -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Contact Information Box -->
+<div class="bg-white rounded-3xl p-8 border border-slate-200/70 shadow-card">
+<h3 class="text-xs font-bold text-slate-800 tracking-wider uppercase mb-6">
+              Contact Information
+            </h3>
+<div class="space-y-5">
+<!-- Item 1: Email -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+<i aria-hidden="true" class="fa-solid fa-envelope text-sm"></i>
+</div>
+<div>
+<div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Direct Email</div>
+<a class="text-sm font-bold text-slate-900 hover:text-indigo-600 transition break-all" href="mailto:aaronangelodcrisologo@gmail.com">
+                    aaronangelodcrisologo@gmail.com
+                  </a>
+</div>
+</div>
+<!-- Item 2: Location -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+<i aria-hidden="true" class="fa-solid fa-location-dot text-sm"></i>
+</div>
+<div>
+<div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Primary Base</div>
+<div class="text-sm font-bold text-slate-900">Makati, Philippines</div>
+</div>
+</div>
+<!-- Item 3: Role -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+<i aria-hidden="true" class="fa-solid fa-briefcase text-sm"></i>
+</div>
+<div>
+<div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Role</div>
+<div class="text-sm font-bold text-slate-900">Full Stack Web Developer</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<hr class="my-6 border-slate-100"/>
+<!-- Social Links -->
+<div>
+<div class="text-xs font-semibold text-slate-500 mb-3">Connect with me:</div>
+<div class="flex items-center gap-3">
+<a aria-label="GitHub profile" class="w-9 h-9 rounded-full border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-600 flex items-center justify-center transition" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-github text-sm"></i>
+</a>
+<a aria-label="LinkedIn profile" class="w-9 h-9 rounded-full border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-600 flex items-center justify-center transition" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-linkedin-in text-sm"></i>
+</a>
+<a aria-label="Back to top" class="w-9 h-9 rounded-full border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-600 flex items-center justify-center transition" href="#home">
+<i aria-hidden="true" class="fa-solid fa-globe text-sm"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Instant Contact Sync Card -->
+<div class="bg-white rounded-3xl p-6 border border-indigo-100 shadow-glow-soft flex items-center gap-5">
+<div aria-label="QR code placeholder" class="w-20 h-20 bg-slate-200 text-slate-500 font-extrabold text-2xl flex items-center justify-center rounded-2xl shrink-0 border border-slate-300" role="img">
+              QR
+            </div>
+<div>
+<h4 class="text-sm font-bold text-slate-900">Instant Contact Sync</h4>
+<p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Scan camera directly to download mobile contact profile, portfolio &amp; credentials.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ContactSection -->
+<!-- BEGIN: Footer -->
+<footer class="mt-auto bg-white border-t border-slate-100 py-8">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-slate-500 gap-4">
+<div class="font-semibold text-slate-700">
+        Aaron Crisologo // Full Stack Web Developer
+      </div>
+<div>
+        © 2026 All Rights Reserved
+      </div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
